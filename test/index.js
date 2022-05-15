@@ -21,6 +21,14 @@ describe('p-from-callback', () => {
     fromCallback((callback) => callback(undefined, 'foo'), true),
   ).to.become(['foo']));
 
+  it('should resolve to undefined', () => expect(
+    fromCallback((callback) => callback()),
+  ).to.become());
+
+  it('should resolve to an empty array', () => expect(
+    fromCallback((callback) => callback(), true),
+  ).to.become([]));
+
   it('should be rejected', () => expect(
     fromCallback((callback) => callback(new Error('my error'))),
   ).to.be.rejectedWith(Error, 'my error'));

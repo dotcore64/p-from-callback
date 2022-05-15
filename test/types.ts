@@ -21,6 +21,19 @@ fromCallback((cb) => cb(undefined, 'foo', 'bar'), true) as Promise<string[]>;
 // @ts-expect-error
 fromCallback((cb) => cb(undefined, 'foo', 'bar'), true) as Promise<number[]>;
 
+fromCallback((cb) => cb()) as Promise<undefined>;
+// eslint-disable-next-line unicorn/no-useless-undefined
+fromCallback((cb) => cb(undefined, undefined)) as Promise<undefined>;
+fromCallback((cb) => cb(new Error('message'))) as Promise<undefined>;
+// @ts-expect-error
+fromCallback((cb) => cb(new Error('message'), 'foo')) as Promise<undefined>;
+// @ts-expect-error
+fromCallback((cb) => cb(new Error('message'))) as Promise<number>;
+
+fromCallback((cb) => cb(), true) as Promise<[]>;
+fromCallback((cb) => cb('foo'), true) as Promise<[]>;
+fromCallback((cb) => cb(), true) as Promise<undefined>; // ideally a compiler error though
+
 // @ts-expect-error
 fromCallback((cb) => cb === 'foo');
 
