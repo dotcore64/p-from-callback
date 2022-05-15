@@ -16,6 +16,8 @@ fromCallback((cb) => cb(undefined, 'foo', 'bar')) as Promise<number>;
 fromCallback((cb) => cb(undefined, 'foo', 'bar')) as Promise<string>;
 fromCallback((cb) => cb(undefined, 'foo'), true) as Promise<string[]>;
 // @ts-expect-error
+fromCallback((cb) => cb(undefined, 'foo'), true) as Promise<string>;
+// @ts-expect-error
 fromCallback((cb) => cb(undefined, 'foo', 'bar')) as Promise<string[]>;
 fromCallback((cb) => cb(undefined, 'foo', 'bar'), true) as Promise<string[]>;
 // @ts-expect-error
@@ -32,7 +34,12 @@ fromCallback((cb) => cb(new Error('message'))) as Promise<number>;
 
 fromCallback((cb) => cb(), true) as Promise<[]>;
 fromCallback((cb) => cb('foo'), true) as Promise<[]>;
-fromCallback((cb) => cb(), true) as Promise<undefined>; // ideally a compiler error though
+// @ts-expect-error
+fromCallback((cb) => cb(), true) as Promise<undefined>;
+// @ts-expect-error
+fromCallback((cb) => cb('error'), true) as Promise<undefined>;
+// @ts-expect-error
+fromCallback((cb) => cb('error', 'foo'), true) as Promise<undefined>;
 
 // @ts-expect-error
 fromCallback((cb) => cb === 'foo');
