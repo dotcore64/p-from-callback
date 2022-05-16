@@ -1,5 +1,4 @@
 {
   "reporter": "spec",
-  "ui": "bdd",
-  "require": ["env-test"]
+  "ui": "bdd"
 }
