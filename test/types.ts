@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/no-unresolved,node/no-missing-import
+// eslint-disable-next-line import/no-unresolved,n/no-extraneous-import
 import fromCallback from 'p-from-callback';
 
 fromCallback((cb) => cb(undefined, 'foo')) as Promise<'foo'>;
