@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Map a callback to a promise",
   "type": "module",
-  "main": "index.js",
   "types": "index.d.ts",
   "exports": {
     ".": {
