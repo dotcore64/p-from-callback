@@ -16,7 +16,7 @@
   },
   "scripts": {
     "lint": "eslint --cache .",
-    "types": "tsc",
+    "types": "tsd",
     "test": "mocha",
     "cover": "c8 npm test"
   },
@@ -52,6 +52,7 @@
     "eslint-plugin-n": "^15.2.1",
     "eslint-plugin-unicorn": "^42.0.0",
     "mocha": "^10.0.0",
+    "tsd": "^0.20.0",
     "typescript": "^4.7.3"
   }
 }
