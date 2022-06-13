@@ -1,8 +1,9 @@
 // eslint-disable-next-line import/no-unresolved,n/no-extraneous-import
 import fromCallback from 'p-from-callback';
+import { expectAssignable, expectType } from 'tsd';
 
-fromCallback((cb) => cb(undefined, 'foo')) as Promise<'foo'>;
-fromCallback((cb) => cb(undefined, 'foo')) as Promise<string>;
+expectType<Promise<'foo'>>(fromCallback((cb) => cb(undefined, 'foo')));
+expectAssignable<Promise<string>>(fromCallback((cb) => cb(undefined, 'foo')));
 // @ts-expect-error
 fromCallback((cb) => cb(undefined, 'foo')) as Promise<number>;
 fromCallback<'foo'>((cb) => cb(undefined, 'foo')) as Promise<'foo'>;
