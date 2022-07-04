@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/no-unresolved,n/no-extraneous-import
+// eslint-disable-next-line n/no-extraneous-import
 import fromCallback from 'p-from-callback';
 import { expectAssignable, expectType } from 'tsd';
 

@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
 // https://github.com/import-js/eslint-plugin-import/issues/1649
-// eslint-disable-next-line import/no-unresolved,n/no-extraneous-import
+// eslint-disable-next-line n/no-extraneous-import
 import fromCallback from 'p-from-callback';
 
 describe('p-from-callback', () => {
