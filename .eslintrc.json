@@ -7,7 +7,8 @@
   },
   "rules": {
     "unicorn/prevent-abbreviations": 0,
-    "eslint-comments/no-unused-disable": "error"
+    "eslint-comments/no-unused-disable": "error",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["index.test-d.ts", "test/*.js"] }]
   },
   "overrides": [
     {
@@ -33,5 +34,15 @@
         "@typescript-eslint/no-redeclare": ["error"]
       }
     }
-  ]
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  }
 }
