@@ -8,19 +8,19 @@ expectAssignable<Promise<string>>(fromCallback((cb) => cb(undefined, 'foo')));
 fromCallback((cb) => cb(undefined, 'foo')) as Promise<number>;
 expectType<Promise<'foo'>>(fromCallback<'foo'>((cb) => cb(undefined, 'foo')));
 
-expectType<Promise<string>>(fromCallback((cb) => cb(undefined, 'foo', 'bar')));
+expectAssignable<Promise<string>>(fromCallback((cb) => cb(undefined, 'foo', 'bar')));
 expectType<Promise<'foo'>>(fromCallback((cb) => cb(undefined, 'foo', 'bar')));
 // @ts-expect-error
 fromCallback((cb) => cb(undefined, 'foo', 'bar')) as Promise<'bar'>;
 // @ts-expect-error
 fromCallback((cb) => cb(undefined, 'foo', 'bar')) as Promise<number>;
-expectType<string>(await fromCallback((cb) => cb(undefined, 'foo', 'bar')));
-expectType<string[]>(await fromCallback((cb) => cb(undefined, 'foo'), true));
+expectAssignable<string>(await fromCallback((cb) => cb(undefined, 'foo', 'bar')));
+expectAssignable<string[]>(await fromCallback((cb) => cb(undefined, 'foo'), true));
 // @ts-expect-error
 fromCallback((cb) => cb(undefined, 'foo'), true) as Promise<string>;
 // @ts-expect-error
 fromCallback((cb) => cb(undefined, 'foo', 'bar')) as Promise<string[]>;
-expectType<string[]>(await fromCallback((cb) => cb(undefined, 'foo', 'bar'), true));
+expectAssignable<string[]>(await fromCallback((cb) => cb(undefined, 'foo', 'bar'), true));
 // @ts-expect-error
 fromCallback((cb) => cb(undefined, 'foo', 'bar'), true) as Promise<number[]>;
 
@@ -46,9 +46,9 @@ fromCallback((cb) => cb('error', 'foo'), true) as Promise<undefined>;
 fromCallback((cb) => cb === 'foo');
 
 let foo: boolean;
-expectType<string>(await fromCallback((cb) => cb(undefined, 'foo', 'bar'), foo));
-expectType<string[]>(await fromCallback((cb) => cb(undefined, 'foo', 'bar'), foo));
-expectType<string | string[]>(await fromCallback((cb) => cb(undefined, 'foo', 'bar'), foo));
+expectAssignable<string>(await fromCallback((cb) => cb(undefined, 'foo', 'bar'), foo));
+expectAssignable<string[]>(await fromCallback((cb) => cb(undefined, 'foo', 'bar'), foo));
+expectAssignable<string | string[]>(await fromCallback((cb) => cb(undefined, 'foo', 'bar'), foo));
 // @ts-expect-error
 fromCallback((cb) => cb(undefined, 'foo', 'bar'), foo) as Promise<number>;
 // @ts-expect-error
