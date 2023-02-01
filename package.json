@@ -1,6 +1,6 @@
 {
   "name": "p-from-callback",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Map a callback to a promise",
   "type": "module",
   "types": "index.d.ts",
