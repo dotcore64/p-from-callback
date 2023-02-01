@@ -1,4 +1,3 @@
-// eslint-disable-next-line n/no-extraneous-import
 import fromCallback from 'p-from-callback';
 import { expectAssignable, expectType } from 'tsd';
 
