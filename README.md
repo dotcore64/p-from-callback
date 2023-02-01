@@ -41,7 +41,7 @@ Takes a callback resolver and returns a promise to the resolved value, or array 
 
 See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
 
-[build-badge]: https://img.shields.io/github/workflow/status/dotcore64/p-from-callback/test/master?style=flat-square
+[build-badge]: https://img.shields.io/github/actions/workflow/status/dotcore64/p-from-callback/test.yml?event=push&style=flat-square
 [build]: https://github.com/dotcore64/p-from-callback/actions
 
 [npm-badge]: https://img.shields.io/npm/v/p-from-callback.svg?style=flat-square
