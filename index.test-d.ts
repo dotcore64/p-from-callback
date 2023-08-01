@@ -1,5 +1,5 @@
-import fromCallback from 'p-from-callback';
 import { expectAssignable, expectType } from 'tsd';
+import fromCallback from 'p-from-callback';
 
 expectType<Promise<'foo'>>(fromCallback((cb) => cb(undefined, 'foo')));
 expectAssignable<Promise<string>>(fromCallback((cb) => cb(undefined, 'foo')));
