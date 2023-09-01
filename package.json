@@ -53,7 +53,7 @@
     "eslint-plugin-n": "^16.0.2",
     "eslint-plugin-unicorn": "^48.0.1",
     "mocha": "^10.2.0",
-    "tsd": "^0.28.1",
+    "tsd": "^0.29.0",
     "typescript": "^5.2.2"
   }
 }
