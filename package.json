@@ -54,6 +54,6 @@
     "eslint-plugin-unicorn": "^54.0.0",
     "mocha": "^10.5.2",
     "tsd": "^0.31.1",
-    "typescript": "^5.5.2"
+    "typescript": "^5.5.4"
   }
 }
