@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/dotcore64/p-from-callback#readme",
   "devDependencies": {
-    "@eslint-community/eslint-plugin-eslint-comments": "^4.5.0",
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.7.1",
     "@typescript-eslint/eslint-plugin": "^8.52.0",
     "@typescript-eslint/parser": "^8.31.1",
     "c8": "^10.1.3",
