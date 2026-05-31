@@ -4,13 +4,13 @@ type Result<R, M extends boolean> =
             ? [never, ...never[]] // Should be CompilerError<>
             : [] | [undefined]
         : M extends false
-            ? [R, ...any[]]
-            : R extends any[]
+            ? [R, ...unknown[]]
+            : R extends unknown[]
                 ? R
                 : [never, ...never[]]; // Should be CompilerError<>
 
 declare function fromCallback<R, M extends boolean = false>(
-    fn: (callback: (error?: any, ...result: Result<R, M>) => unknown) => unknown,
+    fn: (callback: (error?: unknown, ...result: Result<R, M>) => unknown) => unknown,
     multi?: M,
 ): Promise<R>;
 
