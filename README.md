@@ -32,8 +32,8 @@ fromCallback(cb => cb(undefined, "foo", "bar"), true)
 
 ## API
 
-#### fromCallback\<R\>((cb: (err: any, res: R)): any): Promise\<R\>
-#### fromCallback\<R\>((cb: (err: any, ...res: R[])): any, true): Promise\<R[]\>
+#### fromCallback\<R\>((cb: (err: unknown, res: R)): unknown): Promise\<R\>
+#### fromCallback\<R\>((cb: (err: unknown, ...res: R[])): unknown, true): Promise\<R[]\>
 
 Takes a callback resolver and returns a promise to the resolved value, or array of values when `multi = true`.
 
