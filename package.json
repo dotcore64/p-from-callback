@@ -12,12 +12,12 @@
     "./package.json": "./package.json"
   },
   "engines": {
-    "node": ">=20.0"
+    "node": "^20.13.0 || >=22"
   },
   "scripts": {
     "lint": "eslint --cache .",
     "types": "tsd",
-    "test": "mocha",
+    "test": "node --test --import ./test/setup.js",
     "cover": "c8 npm test"
   },
   "repository": {
@@ -52,7 +52,6 @@
     "eslint-plugin-n": "^18.0.1",
     "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-unicorn": "^64.0.0",
-    "mocha": "^11.7.5",
     "prettier": "3.8.3",
     "tsd": "^0.33.0",
     "typescript": "^5.9.3",
