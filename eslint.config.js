@@ -7,7 +7,7 @@ import { configs as typescript } from "typescript-eslint";
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs"; // eslint-disable-line import/default
 import prettier from "eslint-plugin-prettier/recommended";
 
-const testFiles = ["test/{,**}/*.?(c)js"];
+const testFiles = ["test/{,**/}*.js"];
 
 export default [
   js.configs.recommended,

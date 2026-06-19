@@ -1,5 +1,3 @@
-import { describe, it } from "node:test";
-
 import { expect } from "chai";
 
 // https://github.com/import-js/eslint-plugin-import/issues/1649
