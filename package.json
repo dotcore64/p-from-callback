@@ -55,7 +55,7 @@
     "eslint-plugin-yml": "^3.8.1",
     "prettier": "3.9.6",
     "tsd": "^0.33.0",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "typescript-eslint": "^8.69.0"
   }
 }
